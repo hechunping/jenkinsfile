@@ -1,22 +1,16 @@
+#!/usr/bin/env groovy
 pipeline {
   agent any
   stages {
-    stage('Stage1') {
-      parallel {
-        stage('Stage1') {
-          steps {
-            sh 'echo \'Hello world!\''
-          }
-        }
-
-        stage('Stage2') {
-          steps {
-            sh 'echo \'step 2\''
-          }
-        }
-
+    stage('拉取代码') {
+      steps {
+        echo 'Pull code'
       }
     }
-
+    stage ('代码扫描') {
+      steps {
+        echo 'sonarqube'
+      }
+    }
   }
 }
