@@ -1,15 +1,21 @@
 #!/usr/bin/env groovy
 pipeline {
     agent any
+
     stages {
-        stage('拉取代码') {
+        stage('Build') {
             steps {
-                echo 'Pull code'
+                echo 'Building...'
             }
         }
-        stage ('代码扫描') {
+        stage('Test') {
             steps {
-                echo 'sonarqube'
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }
